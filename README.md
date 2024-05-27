@@ -23,7 +23,7 @@ Some commonly used HTML event attributes and the events they handle:
 5. onkeyup: Handles keyup events.
 6. onchange: Handles change events (e.g., for input fields).
 
-- add the onclick attribute using JavaScript 
+- Using on[eventname] Attribute - The on[eventname] attribute is a way to assign an event handler function directly to a specific event property of a DOM element. 
 ```
 <button id="myButton">Click using JS!</button>
 
@@ -38,3 +38,11 @@ btn.onclick = handleAlert;
 const btn = document.querySelector("#myButton");
 btn.onclick = null;
 ```
+- Differences Between on[eventname] and addEventListener
+
+| on[eventname]  | addEventListener |
+| ------------- | ------------- |
+| **Single Event Handler:** Assigning a function to the on[eventname] property replaces any existing event handler for that event type. | **Multiple Event Handlers:** Allows you to add multiple event handlers for the same event type on the same element.  |
+| **Simple and Direct:** This method is easy to use and understand for simple cases.  | **Advanced Features:** Provides options for capturing, bubbling, and once-only event handling.  |
+| **Limited to One Handler:** You can only assign one event handler per event type using this method.  | **Preferred for Complex Applications:** Offers more flexibility and control, making it suitable for more complex and scalable applications.  |
+- There are two ways you can listen to events: using the addEventListener() JavaScript method and the on[eventname] HTML attributes. Each has its advantages and disadvantages, so it's good to be familiar with both.
